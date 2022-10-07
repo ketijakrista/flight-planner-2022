@@ -1,0 +1,32 @@
+<div class="form-container">
+  <form
+    class="add-flight-form"
+    *ngIf="addFlightForm"
+    [formGroup]="addFlightForm">
+    <div>
+      <span>From</span>
+      <div formGroupName="from">
+        <input formControlName="country" placeholder="Country" type="text" />
+        <input formControlName="city" placeholder="City" type="text" />
+        <input formControlName="airport" placeholder="airport" type="text" />
+      </div>
+    </div>
+
+    <div>
+      <span>To</span>
+      <div formGroupName="to">
+        <input formControlName="country" placeholder="Country" type="text" />
+        <input formControlName="city" placeholder="City" type="text" />
+        <input formControlName="airport" placeholder="airport" type="text" />
+      </div>
+    </div>
+
+    <input formControlName="carrier" placeholder="Carrier" type="text" />
+    <input formControlName="departureTime" type="datetime-local" />
+    <input formControlName="arrivalTime" type="datetime-local" />
+
+    <button (click)="submit()">Submit</button>
+  </form>
+</div>
+
+{{ errorMessage | json }}

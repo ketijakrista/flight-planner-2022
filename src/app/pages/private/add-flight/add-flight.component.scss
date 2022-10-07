@@ -1,0 +1,15 @@
+.add-flight-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 500px;
+  padding: 20px;
+  background-color: cadetblue;
+}
+
+.form-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 20px 0;
+}

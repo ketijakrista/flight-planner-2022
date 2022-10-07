@@ -1,0 +1,11 @@
+<header class="header">
+  <button
+    *ngIf="(isAuthorized | async) === false"
+    class="btn-login"
+    (click)="login()">
+    Login
+  </button>
+  <button *ngIf="isAuthorized | async" class="btn-login" (click)="logout()">
+    Logout
+  </button>
+</header>
