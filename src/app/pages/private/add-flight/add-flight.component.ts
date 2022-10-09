@@ -10,7 +10,7 @@ import { Subject, takeUntil } from 'rxjs';
 })
 export class AddFlightComponent implements OnInit, OnDestroy {
   addFlightForm?: FormGroup;
-  errorMessage = 'Error';
+  errorMessage = '';
   ngDestroyed$ = new Subject<void>();
 
   constructor(private fb: FormBuilder, private adminService: AdminService) {}

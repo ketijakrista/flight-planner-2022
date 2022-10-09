@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
 export class LoginService {
   isAuthorized = new BehaviorSubject(false);
 
-  // TODO: get value on each refresh
   constructor(private router: Router) {
     this.isAuthorized.next(!!localStorage.getItem('credentials'));
   }

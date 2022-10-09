@@ -1,0 +1,37 @@
+<section class="find-flight-section">
+  <div class="container">
+    <h1 class="title">Find flight by ID</h1>
+    <div>
+      <input placeholder="ID" [(ngModel)]="inputValue" type="text" />
+      <button (click)="findFlight()">Find</button>
+    </div>
+    <span *ngIf="errorMessage">{{ errorMessage }}</span>
+    <div class="flight-card" *ngIf="flight">
+      <button (click)="deleteFlight(flight.id)" class="btn-delete">x</button>
+      <span>
+        <b>ID</b>
+        {{ flight.id }}
+      </span>
+      <span>
+        <b>Carrier</b>
+        {{ flight.carrier }}
+      </span>
+      <span>
+        <b>Departure Time</b>
+        {{ flight.departureTime }}
+      </span>
+      <span>
+        <b>Arrival Time</b>
+        {{ flight.arrivalTime }}
+      </span>
+      <span>
+        <b>From</b>
+        {{ flight.from.airport }}
+      </span>
+      <span>
+        <b>To</b>
+        {{ flight.to.airport }}
+      </span>
+    </div>
+  </div>
+</section>

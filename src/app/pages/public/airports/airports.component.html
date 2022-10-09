@@ -1,0 +1,28 @@
+<section class="find-airports-section">
+  <div class="container">
+    <h1 class="title">Find airport</h1>
+    <div>
+      <input
+        placeholder="Search by anything..."
+        [(ngModel)]="inputValue"
+        type="text" />
+      <button (click)="findAirports()">Find</button>
+    </div>
+    <span *ngIf="errorMessage">{{ errorMessage }}</span>
+  </div>
+</section>
+
+<div class="table-container">
+  <table class="airport-table" *ngIf="airports.length > 0">
+    <tr>
+      <th>Airport</th>
+      <th>City</th>
+      <th>Country</th>
+    </tr>
+    <tr *ngFor="let airport of airports">
+      <td>{{ airport.airport }}</td>
+      <td>{{ airport.city }}</td>
+      <td>{{ airport.country }}</td>
+    </tr>
+  </table>
+</div>

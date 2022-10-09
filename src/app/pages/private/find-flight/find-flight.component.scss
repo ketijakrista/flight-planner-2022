@@ -1,0 +1,36 @@
+.find-flight-section {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.flight-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 4px;
+  position: relative;
+}
+
+.btn-delete {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: transparent;
+  border: none;
+  color: crimson;
+  cursor: pointer;
+}

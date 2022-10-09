@@ -1,11 +1,27 @@
 <header class="header">
-  <button
-    *ngIf="(isAuthorized | async) === false"
-    class="btn-login"
-    (click)="login()">
-    Login
-  </button>
-  <button *ngIf="isAuthorized | async" class="btn-login" (click)="logout()">
-    Logout
-  </button>
+  <h2 routerLink="/">Air Baltic</h2>
+  <div class="header-right">
+    <div class="header-links">
+      <a
+        class="header-link"
+        [routerLink]="item.path"
+        routerLinkActive="active"
+        *ngFor="
+          let item of (isAuthorized | async)
+            ? privateHeaderItems
+            : publicHeaderItems
+        ">
+        {{ item.title }}
+      </a>
+    </div>
+    <button
+      *ngIf="(isAuthorized | async) === false"
+      class="btn-login"
+      (click)="login()">
+      Login
+    </button>
+    <button *ngIf="isAuthorized | async" class="btn-login" (click)="logout()">
+      Logout
+    </button>
+  </div>
 </header>

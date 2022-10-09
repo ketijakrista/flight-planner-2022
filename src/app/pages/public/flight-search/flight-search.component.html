@@ -1,0 +1,28 @@
+<section class="flight-search-section">
+  <div class="form-container" *ngIf="flightSearchForm">
+    <form class="flight-search-form" [formGroup]="flightSearchForm">
+      <label for="from">From</label>
+      <input id="from" formControlName="from" type="text" />
+      <label for="to">To</label>
+      <input id="to" formControlName="to" type="text" />
+      <label for="departureDate">Departure date</label>
+      <input id="departureDate" formControlName="departureDate" type="date" />
+      <button (click)="searchFlights()" type="button">Search</button>
+    </form>
+  </div>
+</section>
+
+<div class="table-container">
+  <table class="flight-table" *ngIf="flights.length > 0">
+    <tr>
+      <th>Airport</th>
+      <th>City</th>
+      <th>Country</th>
+    </tr>
+    <tr *ngFor="let flight of flights">
+      <td>{{ flight.id }}</td>
+      <td>{{ flight.carrier }}</td>
+      <td>{{ flight.from.airport }}</td>
+    </tr>
+  </table>
+</div>

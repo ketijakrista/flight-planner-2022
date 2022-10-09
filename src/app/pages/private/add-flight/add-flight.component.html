@@ -25,8 +25,8 @@
     <input formControlName="departureTime" type="datetime-local" />
     <input formControlName="arrivalTime" type="datetime-local" />
 
+    <span>{{ errorMessage }}</span>
+
     <button (click)="submit()">Submit</button>
   </form>
 </div>
-
-{{ errorMessage | json }}
